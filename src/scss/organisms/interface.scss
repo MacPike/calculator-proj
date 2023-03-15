@@ -1,0 +1,24 @@
+.interface{
+    display: flex;
+    flex-wrap: wrap;
+    padding: .5rem;
+    border-radius: 0.3rem;
+    background-color: black;
+    .interface-box{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        
+       &.numbers{
+        width: 75%;
+       }
+       &.actions{
+        width: 25%;
+        align-items: end;
+        flex-direction: column;
+       }
+       &.memory{
+        flex-basis: 100%;
+       }
+    }
+}

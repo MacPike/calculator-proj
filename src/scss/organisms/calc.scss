@@ -1,0 +1,13 @@
+.calc{
+    font-family: 'Courier New', Courier, monospace;
+    max-width: 19rem;
+    margin: 0 auto;
+    &-box{
+        background: beige;
+        border-radius: .5rem;
+        padding: 2rem;
+        border: inset 2px solid grey;
+        box-shadow: .3rem .3rem .3rem darkgray;
+    }
+   
+}
