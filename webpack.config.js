@@ -23,6 +23,10 @@ module.exports = {
   optimization: {
     runtimeChunk: "single",
   },
+  watch: true,
+  watchOptions: {
+    ignored: /node_modules/,
+  },
   module: {
     rules: [
       {

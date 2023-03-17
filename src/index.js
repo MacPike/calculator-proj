@@ -4,12 +4,13 @@ import "./scss/style.scss";
 //btns
 const numBtns = document.querySelectorAll("[data-numBtn]");
 const actBtns = document.querySelectorAll("[data-actionBtn]");
+const trigoBtns = document.querySelectorAll("[data-trigoBtn]");
 const calculateBtn = document.querySelector("[data-calculate]");
 const storeBtn = document.querySelector("[data-store]");
 const resetBtn = document.querySelector("[data-clear]");
 const memoryBtn = document.querySelector("[data-memory]");
 //inteface
-const display = document.getElementById("display");
+const display = document.querySelector("[data-display]");
 const memory = document.querySelector(".memoryview");
 
 //state
@@ -26,18 +27,28 @@ function init() {
       setNumBtns(evt.target.value);
     });
   }
+
   for (let btn of actBtns) {
     btn.addEventListener("click", (evt) => {
       setActBtns(evt.target.value);
     });
   }
+
+  for (let btn of trigoBtns) {
+    btn.addEventListener("click", (evt) => {
+      setTrigoBtns(evt.target.value);
+    });
+  }
+
   calculateBtn.addEventListener("click", calculate);
   storeBtn.addEventListener("click", () => {
     memoryStore(true);
   });
+
   resetBtn.addEventListener("click", () => {
     memoryStore(false);
   });
+
   memoryBtn.addEventListener("click", (evt) => {
     setNumBtns(evt.target.value);
   });
@@ -53,6 +64,28 @@ const setNumBtns = (value) => {
 
 const setActBtns = (action) => {
   let newMemory = _.join([state.memory, state.number, action], "");
+  state.memory = newMemory;
+  state.number = 0;
+  updateState();
+};
+
+const setTrigoBtns = (action) => {
+  let calc = 0;
+  console.log(action);
+  switch (action) {
+    case "sin":
+      calc = Math.sin(state.number);
+      break;
+    case "cos":
+      calc = Math.cos(state.number);
+      break;
+    case "tan":
+      calc = Math.tan(state.number);
+      break;
+    default:
+      return;
+  }
+  let newMemory = _.join([state.memory, state.number, calc], "");
   state.memory = newMemory;
   state.number = 0;
   updateState();

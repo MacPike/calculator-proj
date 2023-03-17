@@ -12,8 +12,15 @@
 
     <div class="calc" id="calc">
         <div class="calc-box">
-            <div class="display" id="display">0</div>
+            <div class="display">
+                <div class="display-box" data-display="">0</div>
+            </div>
             <div class="interface">
+                <div class="interface-box numbers">
+                    <button class="btn" data-trigoBtn value="sin">sin</button>
+                    <button class="btn" data-trigoBtn value="cos">cos</button>
+                    <button class="btn" data-trigoBtn value="tan">tan</button>
+                </div>
                 <div class="interface-box numbers">
                     <button class="btn" data-numBtn value="0">0</button>
                     <button class="btn" data-numBtn value="1">1</button>
@@ -25,6 +32,7 @@
                     <button class="btn" data-numBtn value="7">7</button>
                     <button class="btn" data-numBtn value="8">8</button>
                     <button class="btn" data-numBtn value="9">9</button>
+                    <button class="btn" data-numBtn value=".">.</button>
                 </div>
                 <div class="interface-box actions">
                     <button class="btn" data-actionBtn value="+">+</button>

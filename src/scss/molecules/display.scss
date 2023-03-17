@@ -1,12 +1,17 @@
 .display{
     background:burlywood;
-    padding: 1rem;
     margin: 0 0 2rem 0;
     font-size: 2rem;
     border: .1rem solid black;
     border-radius: 0.4rem;
     box-shadow: inset 0 0 .4rem lightgoldenrodyellow;
-    text-align: right;
-    color: rgb(144, 14, 14);
-    text-shadow: 0 0 0.2rem red;
+    &-box{
+        text-align: right;
+        color: rgb(144, 14, 14);
+        text-shadow: 0 0 0.2rem red;
+        margin: 1rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
 };
